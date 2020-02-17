@@ -6,6 +6,7 @@ import Basic from './basic'
 import RefSave from './ref-save'
 import ReadOnly from './read-only'
 import CustomControls from './custom-controls'
+import EjemploExpediente from './expediente'
 import Decorators from './decorator'
 import InlineToolbar from './inline-toolbar'
 import CustomInlineToolbar from './custom-inline-toolbar'
@@ -16,7 +17,7 @@ import KeyBindings from './key-bindings'
 
 const App = () => {
 
-    const [sample, setSample] = useState(<Basic />)
+    const [sample, setSample] = useState(<EjemploExpediente />)
 
     useEffect(() => {
         console.log(`Loaded ${sample.type.name} example`)
@@ -25,6 +26,7 @@ const App = () => {
     return (
         <div>
             Choose example: &nbsp; 
+            <button onClick={() => setSample(<EjemploExpediente />)}>Expediente</button>
             <button onClick={() => setSample(<Basic />)}>Basic</button> 
             <button onClick={() => setSample(<Theme />)}>Theme</button> 
             <button onClick={() => setSample(<RefSave />)}>Ref Events</button> 
